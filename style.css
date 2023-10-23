@@ -1,0 +1,104 @@
+.cont {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40%;
+    width: auto;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.504);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+
+body {
+    font-family: 'Manrope';
+    background-color: rgb(100, 100, 100);
+    margin: 0;
+}
+
+#main{
+    display:flex;
+    flex-direction: row;
+}
+
+h3{
+    color: #EEEEEE;
+    margin: 0%;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-size: 130%;
+}
+
+#list{
+    color:#EEEEEE;
+    display: flex;
+    width: 10%;
+}
+
+.child{
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    margin-top: 0%;
+}
+li{
+    color: #EEEEEE;
+}
+a{
+    color:#EEEEEE;
+    font-size: 100%;
+    text-decoration: none;
+}
+a:hover{text-decoration: underline;}
+
+@keyframes textShine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+h1 {
+    margin: 5px;
+    background: linear-gradient(
+      to right,
+      #57c518 20%,
+      #25cfc1 30%,
+      #0190cd 70%,
+      #cb0df1 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+
+    font-size: 250%;
+    text-align: center;
+  }
+
+@media(max-width: 425px){
+    .cont {max-width: 80%; top: 50px; padding-left: 5%; padding-right: 5%;}
+    h1 {font-size: 200%;}
+    h3{
+        font-size: 120%;
+        white-space: inherit;
+    }
+}
+  
