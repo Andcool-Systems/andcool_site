@@ -52,7 +52,7 @@ h3{
 ul{
     display: flex;
     flex-direction: column;
-    padding-left: 15%;
+    padding-left: 10%;
     margin-top: 0%;
 }
 li{
@@ -99,6 +99,9 @@ h1 {
     h3{
         font-size: 120%;
         white-space: inherit;
+    }
+    ul{
+        padding-left: 15%;
     }
 }
   
