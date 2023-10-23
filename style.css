@@ -93,7 +93,12 @@ h1 {
     text-align: center;
   }
 
-@media(max-width: 425px){
+
+@media(max-width: 768px){
+    .cont {max-width: 80%; top: 50px; padding-left: 5%; padding-right: 5%;}
+
+}
+@media(max-width: 470px){
     .cont {max-width: 80%; top: 50px; padding-left: 5%; padding-right: 5%;}
     h1 {font-size: 200%;}
     h3{
@@ -104,4 +109,5 @@ h1 {
         padding-left: 15%;
     }
 }
+
   
