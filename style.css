@@ -75,6 +75,7 @@ a:hover{text-decoration: underline;}
   }
   
 h1 {
+    color:#EEEEEE;
     margin: 5px;
     background: linear-gradient(
       to right,

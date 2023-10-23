@@ -34,9 +34,7 @@
 			<a href="https://t.me/andcool_systems" target="_blank">Telegram</a>
 			<a href="https://discord.com/users/812990469482610729/" target="_blank">Discord</a>
         </div>
-    </div>
-
-        
+    </div>  
     
   </div>
 
@@ -77,7 +75,7 @@
           }
           let idx = Math.round(x / bsize + (width / bsize) * (y / bsize));
           let k = boxes[idx] < h ? 0.4 : 0.02;
-          boxes[idx] += (h - boxes[idx]) * k;
+          boxes[idx] += ((h - boxes[idx]) * k);
           push();
           translate(-width / 2 + x, -height / 2 + y);
           box(bsize, bsize, boxes[idx]);
