@@ -77,6 +77,8 @@
           let idx = Math.round(x / bsize + (width / bsize) * (y / bsize));
           let k = boxes[idx] < h ? 0.4 : 0.02;
           boxes[idx] += ((h - boxes[idx]) * k);
+          //boxes.fill(h);
+          fill(boxes[idx]);
           push();
           translate(-width / 2 + x, -height / 2 + y);
           box(bsize, bsize, boxes[idx]);
