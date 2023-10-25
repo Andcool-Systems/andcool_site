@@ -68,11 +68,12 @@
           let h = noise(frameCount * 0.01, x / width * 10, y / height * 10) * 10 * 40;
 
 
-          let offs = -35;
-          if (mouseX + offs >= x - bsize / 2 && mouseX + offs <= x + bsize / 2 &&
+          let offs = -10;
+          let offsx = -35;
+          /*if (mouseX + offsx >= x - bsize / 2 && mouseX + offsx <= x + bsize / 2 &&
             mouseY + offs >= y - bsize / 2 && mouseY + offs <= y + bsize / 2) {
             h = 400;
-          }
+          }*/
           let idx = Math.round(x / bsize + (width / bsize) * (y / bsize));
           let k = boxes[idx] < h ? 0.4 : 0.02;
           boxes[idx] += ((h - boxes[idx]) * k);
