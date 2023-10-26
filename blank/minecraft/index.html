@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <title>AndcoolSystems blank</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Manrope:wght@600&display=swap" rel="stylesheet"></link>
+  <link rel="icon" type="image/x-icon" href="/res/andcool.ico">
+</head>
+    <style>
+        body {
+            font-family: 'Manrope';
+            background-color: rgb(100, 100, 100);
+            margin: 0;
+        }
+    </style>
+    <script>
+        function map_range(value, low1, high1, low2, high2) {
+            return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+        }
+
+        let boxes = [];
+        let bsize = 60;
+        let amx, amy;
+        function setup() {
+        createCanvas(windowWidth, windowHeight, WEBGL);
+        stroke(0, 0, 0, 200);
+        strokeWeight(0.5);
+
+        rectMode(CENTER);
+        ortho(-width / 2, width / 2, -height / 2, height / 2, 10, 2000);
+        amx = Math.ceil(width / bsize + 1);
+        amy = Math.ceil(height / bsize + 1)
+        boxes = new Array(amx * amy).fill(400);
+        fill(110);
+        }
+
+        function draw() {
+        background(100);
+        directionalLight(255, 255, 255, -PI * 0.4, PI * 0.3, -PI * 0.6);
+        translate(-10, -40, 0);
+        rotateX(-0.2);
+        rotateY(0.2);
+
+        for (let x = 0; x < width + bsize; x += bsize) {
+            for (let y = 0; y < height + bsize; y += bsize) {
+
+            let h = Math.round(map_range(noise(frameCount * 0.01, x / width * 10, y / height * 10), 0, 1, 0, 7)) * (bsize * 2);
+            
+
+            let offs = -10;
+            let offsx = -35;
+            /*if (mouseX + offsx >= x - bsize / 2 && mouseX + offsx <= x + bsize / 2 &&
+                mouseY + offs >= y - bsize / 2 && mouseY + offs <= y + bsize / 2) {
+                h = 400;
+            }*/
+            let idx = Math.round(x / bsize + (width / bsize) * (y / bsize));
+            let k = boxes[idx] < h ? 0.4 : 0.02;
+            //boxes[idx] += ((h - boxes[idx]) * k);
+            //boxes.fill(h);
+            boxes[idx] = h - 100;
+            fill(boxes[idx] - 50);
+            push();
+            translate(-width / 2 + x, -height / 2 + y);
+            box(bsize, bsize, boxes[idx]);
+            pop();
+            }
+        }
+        }
+    </script>
+
+</body>
+
+</html>
