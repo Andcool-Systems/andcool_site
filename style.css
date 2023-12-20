@@ -94,7 +94,11 @@ h1 {
     text-align: center;
   }
 
-
+#services{
+    padding: 1.65%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
 @media(max-width: 768px){
     .cont {max-width: 80%; top: 50px; padding-left: 5%; padding-right: 5%;}
 
