@@ -19,13 +19,8 @@
     <div id="main">
         <div id="langs" class="child">
           <h3>Most used languages</h3>
-          <ul>
-            <li>Python</li>
-            <li>C++</li>
-            <li>TypeScript</li>
-            <li>JavaScript</li>
-            <li>Html5</li>
-            <li>Css3</li>
+          <ul id="langs_ul">
+            <li>Loading...</li>
           </ul>
         </div>
 
@@ -41,6 +36,11 @@
       <div id="services" class="child">
         <h3>Services</h3>
         <a href="https://fu.andcool.ru">File uploader</a>
+      </div>
+
+      <div id="services" class="child">
+        <h3>Wakatime</h3>
+        <a href="https://wakatime.com/@AndcoolSystems" id="wakatime">Loading...</a>
       </div>
     </div>
 
@@ -95,6 +95,31 @@
     }
   </script>
 
+<script>
+    async function load_time(){
+      var url = "https://wakatime.com/share/@AndcoolSystems/c20041f4-a965-47c3-ac36-7234e622a980.json";
+      var data = await axios.get(url);
+      var wakatime = document.getElementById("wakatime");
+      wakatime.innerHTML = data.data.data.grand_total.human_readable_total_including_other_language;
+
+    }
+    async function load_langs(){
+      var url = "https://wakatime.com/share/@AndcoolSystems/93b40df8-9273-4b93-a0f2-b2096313eba5.json";
+      var data = await axios.get(url);
+      var langs = document.getElementById("langs_ul");
+      if (data.status == 200) langs.innerHTML = "";
+      let lang_dat = data.data.data;
+
+      for (let x = 0; x < 6; x++){
+        let lang = document.createElement("li");
+        lang.innerHTML = lang_dat[x].name + " (" + lang_dat[x].percent + "%)"
+        langs.appendChild(lang);
+      }
+    }
+    document.addEventListener("DOMContentLoaded", load_time);
+    document.addEventListener("DOMContentLoaded", load_langs);
+
+</script>
 
 </body>
 
