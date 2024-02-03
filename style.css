@@ -4,7 +4,7 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    max-width: 40%;
+    max-width: 420px;
     width: auto;
     top: 100px;
     display: flex;
@@ -14,6 +14,10 @@
     border-radius: 10px;
     flex-wrap: wrap;
     align-content: center;
+    border: 2px rgba(75, 73, 73, 0.705) solid;
+    -webkit-box-shadow: 6px 6px 20px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 10px -3px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 10px -3px rgba(0,0,0,0.75);
 }
 
 
@@ -21,11 +25,14 @@ body {
     font-family: 'Manrope';
     background-color: rgb(100, 100, 100);
     margin: 0;
+    overflow: hidden;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #main{
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 h3{
@@ -34,6 +41,7 @@ h3{
     white-space: nowrap;
     margin-bottom: 10px;
     font-size: 130%;
+    text-wrap: wrap;
 }
 
 #list{
@@ -79,10 +87,9 @@ h1 {
     margin: 5px;
     background: linear-gradient(
       to right,
-      #57c518 20%,
-      #25cfc1 30%,
-      #0190cd 70%,
-      #cb0df1 80%
+      #57c518 33%,
+      #25cfc1 66%,
+      #0190cd 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -92,6 +99,7 @@ h1 {
 
     font-size: 250%;
     text-align: center;
+    font-weight: 400;
   }
 
 #services{
